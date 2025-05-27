@@ -24,10 +24,8 @@ const Dropdown = ({ menuItem, stickyMenu }) => {
   }, []);
 
   const handleToggle = () => {
-    // Only toggle dropdown on mobile screens
-    if (!isXlScreen) {
-      setDropdownToggler(!dropdownToggler);
-    }
+    // Toggle dropdown on all screen sizes
+    setDropdownToggler(!dropdownToggler);
   };
 
   return (
@@ -42,10 +40,8 @@ const Dropdown = ({ menuItem, stickyMenu }) => {
         onClick={(e) => {
           // Prevent default anchor behavior
           e.preventDefault();
-          // Only toggle dropdown on mobile screens
-          if (!isXlScreen) {
-            setDropdownToggler(!dropdownToggler);
-          }
+          // Toggle dropdown on all screen sizes
+          setDropdownToggler(!dropdownToggler);
         }}
         className={`hover:text-tommyzion-cinema-spotlight-gold text-custom-sm font-medium text-white flex items-center gap-1.5 capitalize ${
           stickyMenu ? "xl:py-4" : "xl:py-6"
@@ -71,7 +67,7 @@ const Dropdown = ({ menuItem, stickyMenu }) => {
 
       {/* <!-- Dropdown Start --> */}
       <ul
-        className={`dropdown theater-curtain-dropdown ${(!isXlScreen && dropdownToggler) ? "flex" : ""}`}
+        className={`dropdown theater-curtain-dropdown ${dropdownToggler ? "flex" : ""}`}
       >
         {menuItem.submenu.map((item, i) => (
           <li key={i}>
@@ -80,10 +76,8 @@ const Dropdown = ({ menuItem, stickyMenu }) => {
               onClick={(e) => {
                 // Don't propagate click to parent elements
                 e.stopPropagation();
-                // Close dropdown on mobile after clicking a link
-                if (!isXlScreen) {
-                  setDropdownToggler(false);
-                }
+                // Close dropdown after clicking a link
+                setDropdownToggler(false);
               }}
               className={`flex text-custom-sm text-white hover:text-tommyzion-cinema-spotlight-gold hover:bg-tommyzion-black-rich py-[7px] px-4.5 spotlight-hover ${
                 pathUrl === item.path && "text-tommyzion-cinema-spotlight-gold bg-tommyzion-black-rich"

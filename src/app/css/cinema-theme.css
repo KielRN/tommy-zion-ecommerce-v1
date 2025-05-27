@@ -143,21 +143,34 @@
   right: 0;
 }
 
-.theater-curtain-dropdown {
+.dropdown.theater-curtain-dropdown {
   background-image: linear-gradient(to bottom, #8B0000, #420000);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   border: 1px solid #6B0000;
-  position: absolute;
+  position: absolute !important;
   overflow: hidden;
   z-index: 50;
   top: 100%;
   left: 0;
   width: 200px;
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  flex-direction: column;
+  gap: 0;
+  min-width: max-content;
+  padding: 10px 0;
+  border-radius: 6px;
+  display: block !important;
 }
 
 @media (min-width: 1280px) {
-  .group:hover .theater-curtain-dropdown {
+  .dropdown.theater-curtain-dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    display: flex !important;
+  }
+
+  .group:hover .dropdown.theater-curtain-dropdown {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);

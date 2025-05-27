@@ -17,9 +17,9 @@
     @apply flex-col gap-0 min-w-max mt-2 lg:mt-0 shadow-2 ease-in duration-200 py-2.5 rounded-md left-0 hidden z-50;
   }
 
-  /* Display dropdown when .flex class is applied (for mobile) */
+  /* Display dropdown when .flex class is applied */
   .dropdown.flex {
-    @apply block;
+    @apply block !important;
   }
 }
 
@@ -31,10 +31,23 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    display: flex;
+    display: flex !important;
+  }
+
+  .dropdown.theater-curtain-dropdown {
+    display: flex !important;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
   }
 
   .group:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .group:hover .dropdown.theater-curtain-dropdown {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
