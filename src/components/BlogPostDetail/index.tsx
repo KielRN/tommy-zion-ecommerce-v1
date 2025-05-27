@@ -62,7 +62,7 @@ const BlogPostDetail = ({ post, htmlContent, relatedPosts }: BlogPostDetailProps
                     <Link
                       key={category}
                       href={`/blog/category/${category.toLowerCase()}`}
-                      className="inline-block bg-blue/10 text-blue text-sm px-3 py-1 rounded-md hover:bg-blue hover:text-white transition-colors"
+                      className="inline-block bg-tommyzion-red/10 text-tommyzion-red text-sm px-3 py-1 rounded-md hover:bg-tommyzion-black hover:text-white transition-colors"
                     >
                       {category}
                     </Link>
@@ -108,7 +108,7 @@ const BlogPostDetail = ({ post, htmlContent, relatedPosts }: BlogPostDetailProps
                   {post.tags.map((tag) => (
                     <li key={tag}>
                       <Link
-                        className="inline-flex hover:text-white border border-gray-3 bg-white py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                        className="inline-flex hover:text-white border border-gray-3 bg-white py-2 px-4 rounded-md ease-out duration-200 hover:bg-tommyzion-black hover:border-tommyzion-black"
                         href={`/blog/tag/${tag.toLowerCase()}`}
                       >
                         {tag}
@@ -266,7 +266,7 @@ const BlogPostDetail = ({ post, htmlContent, relatedPosts }: BlogPostDetailProps
                       className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue"
                     >
                       {category}
-                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                      <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-tommyzion-black">
                         {Math.floor(Math.random() * 50) + 1}
                       </span>
                     </Link>
@@ -277,7 +277,7 @@ const BlogPostDetail = ({ post, htmlContent, relatedPosts }: BlogPostDetailProps
                     className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue"
                   >
                     E-commerce
-                    <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                    <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-tommyzion-black">
                       25
                     </span>
                   </Link>
@@ -287,7 +287,7 @@ const BlogPostDetail = ({ post, htmlContent, relatedPosts }: BlogPostDetailProps
                     className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue"
                   >
                     Business
-                    <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                    <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-tommyzion-black">
                       23
                     </span>
                   </Link>
@@ -297,7 +297,7 @@ const BlogPostDetail = ({ post, htmlContent, relatedPosts }: BlogPostDetailProps
                     className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue"
                   >
                     Marketing
-                    <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                    <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-tommyzion-black">
                       18
                     </span>
                   </Link>
@@ -307,7 +307,7 @@ const BlogPostDetail = ({ post, htmlContent, relatedPosts }: BlogPostDetailProps
                     className="group flex items-center justify-between ease-out duration-200 text-dark hover:text-blue"
                   >
                     Photography
-                    <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-blue">
+                    <span className="inline-flex rounded-[30px] bg-gray-2 text-custom-xs px-1.5 ease-out duration-200 group-hover:text-white group-hover:bg-tommyzion-black">
                       12
                     </span>
                   </Link>
@@ -326,7 +326,7 @@ const BlogPostDetail = ({ post, htmlContent, relatedPosts }: BlogPostDetailProps
                   {post.tags.map((tag) => (
                     <Link
                       key={tag}
-                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                      className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-tommyzion-black hover:border-tommyzion-black"
                       href={`/blog/tag/${tag.toLowerCase()}`}
                     >
                       {tag}
@@ -335,28 +335,28 @@ const BlogPostDetail = ({ post, htmlContent, relatedPosts }: BlogPostDetailProps
                   
                   {/* Additional common tags */}
                   <Link
-                    className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                    className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-tommyzion-black hover:border-tommyzion-black"
                     href="/blog/tag/startup"
                   >
                     Startup
                   </Link>
 
                   <Link
-                    className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                    className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-tommyzion-black hover:border-tommyzion-black"
                     href="/blog/tag/tips"
                   >
                     Tips
                   </Link>
 
                   <Link
-                    className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                    className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-tommyzion-black hover:border-tommyzion-black"
                     href="/blog/tag/guide"
                   >
                     Guide
                   </Link>
 
                   <Link
-                    className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                    className="inline-flex hover:text-white border border-gray-3 py-2 px-4 rounded-md ease-out duration-200 hover:bg-tommyzion-black hover:border-tommyzion-black"
                     href="/blog/tag/seo"
                   >
                     SEO

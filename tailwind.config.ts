@@ -96,6 +96,24 @@ const config: Config = {
         DEFAULT: "#F27430",
         dark: "#E1580E",
       },
+      tommyzion: {
+        black: {
+          DEFAULT: "#000000",
+          rich: "#1A1A1A",
+          charcoal: "#2D2D2D"
+        },
+        red: {
+          DEFAULT: "#8B0000",
+          crimson: "#A50000",
+          bright: "#FF0000",
+          light: "#FF4444"
+        },
+        metallic: {
+          silver: "#C0C0C0",
+          gold: "#B8860B",
+          slate: "#708090"
+        }
+      },
     },
     screens: {
       xsm: "375px",
@@ -241,7 +259,7 @@ const config: Config = {
           "0px 0px 1px 0px rgba(33, 37, 41, 0.08), 0px 2px 2px 0px rgba(33, 37, 41, 0.06)",
         filter: "0px 1px 0px 0px #E5E7EB",
         list: "1px 0px 0px 0px #E5E7EB",
-        input: "inset 0 0 0 2px #3C50E0",
+        input: "inset 0 0 0 2px #8B0000",
       },
     },
   },

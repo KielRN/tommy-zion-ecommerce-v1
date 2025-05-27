@@ -99,8 +99,8 @@ const QuickViewModal = () => {
                       <button
                         onClick={() => setActivePreview(key)}
                         key={key}
-                        className={`flex items-center justify-center w-20 h-20 overflow-hidden rounded-lg bg-gray-1 ease-out duration-200 hover:border-2 hover:border-blue ${
-                          activePreview === key && "border-2 border-blue"
+                        className={`flex items-center justify-center w-20 h-20 overflow-hidden rounded-lg bg-gray-1 ease-out duration-200 hover:border-2 hover:border-tommyzion-red ${
+                          activePreview === key && "border-2 border-tommyzion-red"
                         }`}
                       >
                         <Image
@@ -120,7 +120,7 @@ const QuickViewModal = () => {
                     <button
                       onClick={handlePreviewSlider}
                       aria-label="button for zoom"
-                      className="gallery__Image w-10 h-10 rounded-[5px] bg-white shadow-1 flex items-center justify-center ease-out duration-200 text-dark hover:text-blue absolute top-4 lg:top-8 right-4 lg:right-8 z-50"
+                      className="gallery__Image w-10 h-10 rounded-[5px] bg-white shadow-1 flex items-center justify-center ease-out duration-200 text-dark hover:text-tommyzion-red absolute top-4 lg:top-8 right-4 lg:right-8 z-50"
                     >
                       <svg
                         className="fill-current"
@@ -347,7 +347,7 @@ const QuickViewModal = () => {
                     <button
                       onClick={() => quantity > 1 && setQuantity(quantity - 1)}
                       aria-label="button for remove product"
-                      className="flex items-center justify-center w-10 h-10 rounded-[5px] bg-gray-2 text-dark ease-out duration-200 hover:text-blue"
+                      className="flex items-center justify-center w-10 h-10 rounded-[5px] bg-gray-2 text-dark ease-out duration-200 hover:text-tommyzion-red"
                       disabled={quantity < 0 && true}
                     >
                       <svg
@@ -377,7 +377,7 @@ const QuickViewModal = () => {
                     <button
                       onClick={() => setQuantity(quantity + 1)}
                       aria-label="button for add product"
-                      className="flex items-center justify-center w-10 h-10 rounded-[5px] bg-gray-2 text-dark ease-out duration-200 hover:text-blue"
+                      className="flex items-center justify-center w-10 h-10 rounded-[5px] bg-gray-2 text-dark ease-out duration-200 hover:text-tommyzion-red"
                     >
                       <svg
                         className="fill-current"
@@ -409,14 +409,14 @@ const QuickViewModal = () => {
                 <button
                   disabled={quantity === 0 && true}
                   onClick={() => handleAddToCart()}
-                  className={`inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark
+                  className={`inline-flex font-medium text-white bg-tommyzion-black py-3 px-7 rounded-md ease-out duration-200 hover:bg-tommyzion-black/90
                   `}
                 >
                   Add to Cart
                 </button>
 
                 <button
-                  className={`inline-flex items-center gap-2 font-medium text-white bg-dark py-3 px-6 rounded-md ease-out duration-200 hover:bg-opacity-95 `}
+                  className={`inline-flex items-center gap-2 font-medium text-white bg-tommyzion-red py-3 px-6 rounded-md ease-out duration-200 hover:bg-tommyzion-red-crimson `}
                 >
                   <svg
                     className="fill-current"

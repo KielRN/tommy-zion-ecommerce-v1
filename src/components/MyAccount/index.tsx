@@ -49,9 +49,9 @@ const MyAccount = () => {
                   <div className="flex flex-wrap xl:flex-nowrap xl:flex-col gap-4">
                     <button
                       onClick={() => setActiveTab("dashboard")}
-                      className={`flex items-center rounded-md gap-2.5 py-3 px-4.5 ease-out duration-200 hover:bg-blue hover:text-white ${
+                      className={`flex items-center rounded-md gap-2.5 py-3 px-4.5 ease-out duration-200 hover:bg-tommyzion-black hover:text-white ${
                         activeTab === "dashboard"
-                          ? "text-white bg-blue"
+                          ? "text-white bg-tommyzion-black"
                           : "text-dark-2 bg-gray-1"
                       }`}
                     >
@@ -92,9 +92,9 @@ const MyAccount = () => {
                     </button>
                     <button
                       onClick={() => setActiveTab("orders")}
-                      className={`flex items-center rounded-md gap-2.5 py-3 px-4.5 ease-out duration-200 hover:bg-blue hover:text-white ${
+                      className={`flex items-center rounded-md gap-2.5 py-3 px-4.5 ease-out duration-200 hover:bg-tommyzion-black hover:text-white ${
                         activeTab === "orders"
-                          ? "text-white bg-blue"
+                          ? "text-white bg-tommyzion-black"
                           : "text-dark-2 bg-gray-1"
                       }`}
                     >
@@ -130,9 +130,9 @@ const MyAccount = () => {
 
                     <button
                       onClick={() => setActiveTab("downloads")}
-                      className={`flex items-center rounded-md gap-2.5 py-3 px-4.5 ease-out duration-200 hover:bg-blue hover:text-white ${
+                      className={`flex items-center rounded-md gap-2.5 py-3 px-4.5 ease-out duration-200 hover:bg-tommyzion-black hover:text-white ${
                         activeTab === "downloads"
-                          ? "text-white bg-blue"
+                          ? "text-white bg-tommyzion-black"
                           : "text-dark-2 bg-gray-1"
                       }`}
                     >
@@ -158,9 +158,9 @@ const MyAccount = () => {
 
                     <button
                       onClick={() => setActiveTab("addresses")}
-                      className={`flex items-center rounded-md gap-2.5 py-3 px-4.5 ease-out duration-200 hover:bg-blue hover:text-white ${
+                      className={`flex items-center rounded-md gap-2.5 py-3 px-4.5 ease-out duration-200 hover:bg-tommyzion-black hover:text-white ${
                         activeTab === "addresses"
-                          ? "text-white bg-blue"
+                          ? "text-white bg-tommyzion-black"
                           : "text-dark-2 bg-gray-1"
                       }`}
                     >
@@ -188,9 +188,9 @@ const MyAccount = () => {
 
                     <button
                       onClick={() => setActiveTab("account-details")}
-                      className={`flex items-center rounded-md gap-2.5 py-3 px-4.5 ease-out duration-200 hover:bg-blue hover:text-white ${
+                      className={`flex items-center rounded-md gap-2.5 py-3 px-4.5 ease-out duration-200 hover:bg-tommyzion-black hover:text-white ${
                         activeTab === "account-details"
-                          ? "text-white bg-blue"
+                          ? "text-white bg-tommyzion-black"
                           : "text-dark-2 bg-gray-1"
                       }`}
                     >
@@ -220,9 +220,9 @@ const MyAccount = () => {
 
                     <button
                       onClick={() => setActiveTab("logout")}
-                      className={`flex items-center rounded-md gap-2.5 py-3 px-4.5 ease-out duration-200 hover:bg-blue hover:text-white ${
+                      className={`flex items-center rounded-md gap-2.5 py-3 px-4.5 ease-out duration-200 hover:bg-tommyzion-black hover:text-white ${
                         activeTab === "logout"
-                          ? "text-white bg-blue"
+                          ? "text-white bg-tommyzion-black"
                           : "text-dark-2 bg-gray-1"
                       }`}
                     >
@@ -645,7 +645,7 @@ const MyAccount = () => {
 
                   <button
                     type="submit"
-                    className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
+                    className="inline-flex font-medium text-white bg-tommyzion-black py-3 px-7 rounded-md ease-out duration-200 hover:bg-tommyzion-black-dark"
                   >
                     Save Changes
                   </button>
@@ -708,7 +708,7 @@ const MyAccount = () => {
 
                   <button
                     type="submit"
-                    className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
+                    className="inline-flex font-medium text-white bg-tommyzion-black py-3 px-7 rounded-md ease-out duration-200 hover:bg-tommyzion-black-dark"
                   >
                     Change Password
                   </button>
