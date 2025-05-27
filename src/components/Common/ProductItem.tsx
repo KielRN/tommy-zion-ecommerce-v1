@@ -47,7 +47,15 @@ const ProductItem = ({ item }: { item: Product }) => {
 
   return (
     <div className="group">
-      <div className="relative overflow-hidden flex items-center justify-center rounded-lg bg-[#F6F7FB] min-h-[270px] mb-4">
+      <div className="relative overflow-hidden flex items-center justify-center rounded-lg bg-tommyzion-black-rich min-h-[270px] mb-4 movie-poster shadow-poster border-2 border-tommyzion-metallic-silver">
+        {/* Movie poster rating badge */}
+        <div className="absolute top-2 right-2 bg-tommyzion-red text-white text-xs px-2 py-1 rounded-sm">
+          {item.category}
+        </div>
+        
+        {/* Add spotlight effect */}
+        <div className="absolute inset-0 bg-gradient-radial from-tommyzion-cinema-spotlight-gold/10 to-transparent rounded-full opacity-30"></div>
+        
         <Image src={item.imgs.previews[0]} alt="" width={250} height={250} />
 
         <div className="absolute left-0 bottom-0 translate-y-full w-full flex items-center justify-center gap-2.5 pb-5 ease-linear duration-200 group-hover:translate-y-0">
@@ -58,7 +66,7 @@ const ProductItem = ({ item }: { item: Product }) => {
             }}
             id="newOne"
             aria-label="button for quick view"
-            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-tommyzion-red"
+            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-spotlight ease-out duration-200 text-white bg-tommyzion-black hover:text-tommyzion-cinema-spotlight-gold"
           >
             <svg
               className="fill-current"
@@ -85,7 +93,7 @@ const ProductItem = ({ item }: { item: Product }) => {
 
           <button
             onClick={() => handleAddToCart()}
-            className="inline-flex font-medium text-custom-sm py-[7px] px-5 rounded-[5px] bg-tommyzion-black text-white ease-out duration-200 hover:bg-tommyzion-black/90"
+            className="inline-flex font-medium text-custom-sm py-[7px] px-5 rounded-[5px] bg-tommyzion-red text-white ease-out duration-200 hover:bg-tommyzion-red-bright ticket-btn"
           >
             Add to cart
           </button>
@@ -94,7 +102,7 @@ const ProductItem = ({ item }: { item: Product }) => {
             onClick={() => handleItemToWishList()}
             aria-label="button for favorite select"
             id="favOne"
-            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-1 ease-out duration-200 text-dark bg-white hover:text-tommyzion-red"
+            className="flex items-center justify-center w-9 h-9 rounded-[5px] shadow-spotlight ease-out duration-200 text-white bg-tommyzion-black hover:text-tommyzion-cinema-spotlight-gold"
           >
             <svg
               className="fill-current"
@@ -117,51 +125,33 @@ const ProductItem = ({ item }: { item: Product }) => {
 
       <div className="flex items-center gap-2.5 mb-2">
         <div className="flex items-center gap-1">
-          <Image
-            src="/images/icons/icon-star.svg"
-            alt="star icon"
-            width={14}
-            height={14}
-          />
-          <Image
-            src="/images/icons/icon-star.svg"
-            alt="star icon"
-            width={14}
-            height={14}
-          />
-          <Image
-            src="/images/icons/icon-star.svg"
-            alt="star icon"
-            width={14}
-            height={14}
-          />
-          <Image
-            src="/images/icons/icon-star.svg"
-            alt="star icon"
-            width={14}
-            height={14}
-          />
-          <Image
-            src="/images/icons/icon-star.svg"
-            alt="star icon"
-            width={14}
-            height={14}
-          />
+          {[1, 2, 3, 4, 5].map((star, index) => (
+            <svg
+              key={index}
+              className={`w-4 h-4 ${index < Math.floor(item.rating) ? "text-tommyzion-cinema-spotlight-gold" : "text-gray-400"}`}
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            </svg>
+          ))}
         </div>
 
-        <p className="text-custom-sm">({item.reviews})</p>
+        <p className="text-custom-sm text-tommyzion-cinema-film-silver">({item.reviews})</p>
       </div>
 
       <h3
-        className="font-medium text-dark ease-out duration-200 hover:text-tommyzion-red mb-1.5"
+        className="font-medium text-white ease-out duration-200 hover:text-tommyzion-cinema-spotlight-gold mb-1.5"
         onClick={() => handleProductDetails()}
       >
         <Link href="/shop-details"> {item.title} </Link>
       </h3>
+      
+      <p className="text-tommyzion-cinema-film-silver text-xs uppercase tracking-wider mb-2">Limited Engagement</p>
 
       <span className="flex items-center gap-2 font-medium text-lg">
-        <span className="text-dark">${item.discountedPrice}</span>
-        <span className="text-dark-4 line-through">${item.price}</span>
+        <span className="text-tommyzion-red">${item.discountedPrice}</span>
+        <span className="text-tommyzion-cinema-film-silver line-through">${item.price}</span>
       </span>
     </div>
   );

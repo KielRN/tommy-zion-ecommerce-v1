@@ -112,6 +112,27 @@ const config: Config = {
           silver: "#C0C0C0",
           gold: "#B8860B",
           slate: "#708090"
+        },
+        // New cinema-themed colors
+        cinema: {
+          // Dark theater-inspired colors
+          theater: {
+            dark: "#121212",      // Dark theater walls
+            seats: "#2C1A1A",     // Dark red theater seats
+            curtain: "#571D1D",   // Theater curtain red
+          },
+          // Film-inspired colors
+          film: {
+            strip: "#333333",     // Film strip color
+            frame: "#DDD6C9",     // Vintage film frame
+            silver: "#E5E5E5",    // Silver screen
+          },
+          // Spotlight/Premiere colors
+          spotlight: {
+            gold: "#FFD700",      // Award/Oscar gold
+            red: "#CC0000",       // Red carpet
+            flash: "#FFFAFA",     // Camera flash
+          }
         }
       },
     },
@@ -260,6 +281,47 @@ const config: Config = {
         filter: "0px 1px 0px 0px #E5E7EB",
         list: "1px 0px 0px 0px #E5E7EB",
         input: "inset 0 0 0 2px #8B0000",
+        // Cinema-themed shadows
+        spotlight: '0 0 20px 10px rgba(255, 255, 255, 0.25)',
+        'spotlight-gold': '0 0 15px 5px rgba(255, 215, 0, 0.3)',
+        poster: '0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.2)',
+        marquee: '0 0 10px 2px rgba(204, 0, 0, 0.5), 0 0 15px 5px rgba(255, 215, 0, 0.3)',
+      },
+      // Cinema-themed background images (placeholder paths - these files need to be created)
+      backgroundImage: {
+        'film-grain': "url('/images/textures/film-grain.png')",
+        'theater-curtain': "url('/images/textures/theater-curtain.png')",
+        'film-strip': "url('/images/textures/film-strip.png')",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      // Animation keyframes for cinema effects
+      keyframes: {
+        flicker: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.9' },
+        },
+        projector: {
+          '0%, 100%': { opacity: '0.95' },
+          '50%': { opacity: '1' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        }
+      },
+      // Animation definitions
+      animation: {
+        'flicker': 'flicker 0.5s ease-in-out infinite',
+        'projector': 'projector 3s ease-in-out infinite',
+        'marquee': 'marquee 25s linear infinite',
+      },
+      // Border styles for film strip effects
+      borderWidth: {
+        'film': '8px',
+      },
+      // Border radius for movie poster styling
+      borderRadius: {
+        'poster': '0.375rem',
       },
     },
   },

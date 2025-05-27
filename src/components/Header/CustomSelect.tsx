@@ -33,20 +33,20 @@ const CustomSelect = ({ options }) => {
   return (
     <div className="dropdown-content custom-select relative" style={{ width: "200px" }}>
       <div
-        className={`select-selected whitespace-nowrap ${
+        className={`select-selected whitespace-nowrap text-tommyzion-cinema-film-silver bg-tommyzion-black-rich border-tommyzion-metallic-silver ${
           isOpen ? "select-arrow-active" : ""
         }`}
         onClick={toggleDropdown}
       >
         {selectedOption.label}
       </div>
-      <div className={`select-items ${isOpen ? "" : "select-hide"}`}>
+      <div className={`select-items theater-curtain-dropdown ${isOpen ? "" : "select-hide"}`}>
         {options.slice(1, -1).map((option, index) => (
           <div
             key={index}
             onClick={() => handleOptionClick(option)}
-            className={`select-item ${
-              selectedOption === option ? "same-as-selected" : ""
+            className={`select-item text-white hover:text-tommyzion-cinema-spotlight-gold hover:bg-tommyzion-black-rich spotlight-hover ${
+              selectedOption === option ? "same-as-selected bg-tommyzion-black-rich text-tommyzion-cinema-spotlight-gold" : ""
             }`}
           >
             {option.label}

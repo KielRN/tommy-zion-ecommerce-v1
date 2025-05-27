@@ -49,8 +49,8 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 top-0 w-full z-9999 bg-white transition-all ease-in-out duration-300 ${
-        stickyMenu && "shadow"
+      className={`fixed left-0 top-0 w-full z-9999 bg-tommyzion-black-rich film-grain-light transition-all ease-in-out duration-300 ${
+        stickyMenu && "shadow-spotlight"
       }`}
     >
       <div className="max-w-[1170px] mx-auto px-4 sm:px-7.5 xl:px-0">
@@ -87,13 +87,13 @@ const Header = () => {
                       id="search"
                       placeholder="I am shopping for..."
                       autoComplete="off"
-                      className="custom-search w-full rounded-r-[5px] bg-gray-1 !border-l-0 border border-gray-3 py-2.5 pl-4 pr-10 outline-none ease-in duration-200"
+                      className="custom-search cinema-search w-full rounded-r-[5px] bg-tommyzion-black text-tommyzion-cinema-film-silver !border-l-0 border border-tommyzion-metallic-silver py-2.5 pl-4 pr-10 outline-none ease-in duration-200"
                     />
 
                     <button
                       id="search-btn"
                       aria-label="Search"
-                      className="flex items-center justify-center absolute right-3 top-1/2 -translate-y-1/2 ease-in duration-200 hover:text-tommyzion-red"
+                      className="flex items-center justify-center absolute right-3 top-1/2 -translate-y-1/2 ease-in duration-200 hover:text-tommyzion-cinema-spotlight-gold text-tommyzion-cinema-film-silver"
                     >
                       <svg
                         className="fill-current"
@@ -144,17 +144,17 @@ const Header = () => {
               </svg>
 
               <div>
-                <span className="block text-2xs text-dark-4 uppercase">
-                  24/7 SUPPORT
+                <span className="block text-2xs text-tommyzion-cinema-film-silver uppercase">
+                  24/7 CONCIERGE
                 </span>
-                <p className="font-medium text-custom-sm text-dark">
+                <p className="font-medium text-custom-sm text-white">
                   (+965) 7492-3477
                 </p>
               </div>
             </div>
 
             {/* <!-- divider --> */}
-            <span className="hidden xl:block w-px h-7.5 bg-gray-4"></span>
+            <span className="hidden xl:block w-px h-7.5 bg-tommyzion-red opacity-50"></span>
 
             <div className="flex w-full lg:w-auto justify-between items-center gap-5">
               <div className="flex items-center gap-5">
@@ -181,11 +181,11 @@ const Header = () => {
                   </svg>
 
                   <div>
-                    <span className="block text-2xs text-dark-4 uppercase">
-                      account
+                    <span className="block text-2xs text-tommyzion-cinema-film-silver uppercase">
+                      premium
                     </span>
-                    <p className="font-medium text-custom-sm text-dark">
-                      Sign In
+                    <p className="font-medium text-custom-sm text-white">
+                      Member Access
                     </p>
                   </div>
                 </Link>
@@ -226,16 +226,16 @@ const Header = () => {
                       />
                     </svg>
 
-                    <span className="flex items-center justify-center font-medium text-2xs absolute -right-2 -top-2.5 bg-tommyzion-red w-4.5 h-4.5 rounded-full text-white">
+                    <span className="flex items-center justify-center font-medium text-2xs absolute -right-2 -top-2.5 bg-tommyzion-red w-4.5 h-4.5 rounded-full text-white shadow-spotlight">
                       {product.length}
                     </span>
                   </span>
 
                   <div>
-                    <span className="block text-2xs text-dark-4 uppercase">
-                      cart
+                    <span className="block text-2xs text-tommyzion-cinema-film-silver uppercase">
+                      tickets
                     </span>
-                    <p className="font-medium text-custom-sm text-dark">
+                    <p className="font-medium text-custom-sm text-white">
                       ${totalPrice}
                     </p>
                   </div>
@@ -289,19 +289,19 @@ const Header = () => {
         {/* <!-- header top end --> */}
       </div>
 
-      <div className="border-t border-gray-3">
+      <div className="border-t border-tommyzion-metallic-silver">
         <div className="max-w-[1170px] mx-auto px-4 sm:px-7.5 xl:px-0">
           <div className="flex items-center justify-between">
             {/* <!--=== Main Nav Start ===--> */}
             <div
-              className={`w-[288px] absolute right-4 top-full xl:static xl:w-auto h-0 xl:h-auto invisible xl:visible xl:flex items-center justify-between ${
+              className={`w-[288px] absolute right-4 top-full xl:relative xl:w-full xl:max-w-md h-0 xl:h-auto invisible xl:visible xl:flex items-center justify-start ${
                 navigationOpen &&
-                `!visible bg-white shadow-lg border border-gray-3 !h-auto max-h-[400px] overflow-y-scroll rounded-md p-5`
+                `!visible bg-tommyzion-black-rich film-grain-light shadow-spotlight-gold border border-tommyzion-red !h-auto max-h-[400px] overflow-y-scroll rounded-md p-5`
               }`}
             >
               {/* <!-- Main Nav Start --> */}
               <nav>
-                <ul className="flex xl:items-center flex-col xl:flex-row gap-5 xl:gap-6">
+                <ul className="flex xl:items-center flex-col xl:flex-row xl:justify-around w-full gap-5 xl:gap-7 text-white">
                   {menuData.map((menuItem, i) =>
                     menuItem.submenu ? (
                       <Dropdown
@@ -312,11 +312,11 @@ const Header = () => {
                     ) : (
                       <li
                         key={i}
-                        className="group relative before:w-0 before:h-[3px] before:bg-tommyzion-red before:absolute before:left-0 before:top-0 before:rounded-b-[3px] before:ease-out before:duration-200 hover:before:w-full "
+                        className="group relative spotlight-hover film-separator before:w-0 before:h-[3px] before:bg-tommyzion-red before:absolute before:left-0 before:top-0 before:rounded-b-[3px] before:ease-out before:duration-200 hover:before:w-full"
                       >
                         <Link
                           href={menuItem.path}
-                          className={`hover:text-tommyzion-red text-custom-sm font-medium text-dark flex ${
+                          className={`hover:text-tommyzion-cinema-spotlight-gold text-custom-sm font-medium text-white flex ${
                             stickyMenu ? "xl:py-4" : "xl:py-6"
                           }`}
                         >
@@ -337,7 +337,7 @@ const Header = () => {
                 <li className="py-4">
                   <a
                     href="#"
-                    className="flex items-center gap-1.5 font-medium text-custom-sm text-dark hover:text-tommyzion-red"
+                    className="flex items-center gap-1.5 font-medium text-custom-sm text-white hover:text-tommyzion-cinema-spotlight-gold spotlight-hover"
                   >
                     <svg
                       className="fill-current"
@@ -363,7 +363,7 @@ const Header = () => {
                 <li className="py-4">
                   <Link
                     href="/wishlist"
-                    className="flex items-center gap-1.5 font-medium text-custom-sm text-dark hover:text-tommyzion-red"
+                    className="flex items-center gap-1.5 font-medium text-custom-sm text-white hover:text-tommyzion-cinema-spotlight-gold spotlight-hover"
                   >
                     <svg
                       className="fill-current"

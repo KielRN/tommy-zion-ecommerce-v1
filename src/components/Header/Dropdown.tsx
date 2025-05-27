@@ -1,23 +1,55 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const Dropdown = ({ menuItem, stickyMenu }) => {
   const [dropdownToggler, setDropdownToggler] = useState(false);
+  const [isXlScreen, setIsXlScreen] = useState(false);
   const pathUrl = usePathname();
+
+  // Check if screen is XL (1280px and above)
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsXlScreen(window.innerWidth >= 1280);
+    };
+    
+    // Initial check
+    checkScreenSize();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkScreenSize);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  const handleToggle = () => {
+    // Only toggle dropdown on mobile screens
+    if (!isXlScreen) {
+      setDropdownToggler(!dropdownToggler);
+    }
+  };
 
   return (
     <li
-      onClick={() => setDropdownToggler(!dropdownToggler)}
-      className={`group relative before:w-0 before:h-[3px] before:bg-tommyzion-red before:absolute before:left-0 before:top-0 before:rounded-b-[3px] before:ease-out before:duration-200 hover:before:w-full ${
+      onClick={handleToggle}
+      className={`group relative spotlight-hover film-separator before:w-0 before:h-[3px] before:bg-tommyzion-red before:absolute before:left-0 before:top-0 before:rounded-b-[3px] before:ease-out before:duration-200 hover:before:w-full ${
         pathUrl.includes(menuItem.title) && "before:!w-full"
       }`}
     >
       <a
         href="#"
-        className={`hover:text-tommyzion-red text-custom-sm font-medium text-dark flex items-center gap-1.5 capitalize ${
+        onClick={(e) => {
+          // Prevent default anchor behavior
+          e.preventDefault();
+          // Only toggle dropdown on mobile screens
+          if (!isXlScreen) {
+            setDropdownToggler(!dropdownToggler);
+          }
+        }}
+        className={`hover:text-tommyzion-cinema-spotlight-gold text-custom-sm font-medium text-white flex items-center gap-1.5 capitalize ${
           stickyMenu ? "xl:py-4" : "xl:py-6"
-        } ${pathUrl.includes(menuItem.title) && "!text-tommyzion-red"}`}
+        } ${pathUrl.includes(menuItem.title) && "!text-tommyzion-cinema-spotlight-gold"}`}
       >
         {menuItem.title}
         <svg
@@ -39,18 +71,22 @@ const Dropdown = ({ menuItem, stickyMenu }) => {
 
       {/* <!-- Dropdown Start --> */}
       <ul
-        className={`dropdown ${dropdownToggler && "flex"} ${
-          stickyMenu
-            ? "xl:group-hover:translate-y-0"
-            : "xl:group-hover:translate-y-0"
-        }`}
+        className={`dropdown theater-curtain-dropdown ${(!isXlScreen && dropdownToggler) ? "flex" : ""}`}
       >
         {menuItem.submenu.map((item, i) => (
           <li key={i}>
             <Link
               href={item.path}
-              className={`flex text-custom-sm hover:text-tommyzion-red hover:bg-gray-1 py-[7px] px-4.5 ${
-                pathUrl === item.path && "text-tommyzion-red bg-gray-1"
+              onClick={(e) => {
+                // Don't propagate click to parent elements
+                e.stopPropagation();
+                // Close dropdown on mobile after clicking a link
+                if (!isXlScreen) {
+                  setDropdownToggler(false);
+                }
+              }}
+              className={`flex text-custom-sm text-white hover:text-tommyzion-cinema-spotlight-gold hover:bg-tommyzion-black-rich py-[7px] px-4.5 spotlight-hover ${
+                pathUrl === item.path && "text-tommyzion-cinema-spotlight-gold bg-tommyzion-black-rich"
               } `}
             >
               {item.title}
