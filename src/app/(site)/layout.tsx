@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "../css/euclid-circular-a-font.css";
 import "../css/style.css";
 import "../css/cinema-theme.css";
+import "../css/navbar.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
